@@ -6,11 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(name:  "Example User",
-             unless AdminUser.find_by(email: 'example@railstutorial.com'),
+AdminUser.create!(name:  "Example User",
+             email: "example@railstutorial.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true)
+unless AdminUser.find_by(email: "example@railstutorial.com")
 
 99.times do |n|
   name  = Faker::Name.name
