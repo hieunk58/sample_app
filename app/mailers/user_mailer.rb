@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
   def account_activation(user)
     @user = user
     # in rails tutorial missing from: "noreply@example.com" -> fail
-    mail to: user.email, from: "noreply@example.com", subject: "Account activation"
+    mail to: user.email, subject: "Account activation"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -19,6 +19,6 @@ class UserMailer < ApplicationMailer
   def password_reset(user)
     @user = user
     # missing "from: "norply@example.com"" -> error
-    mail to: user.email, from: "noreply@example.com", subject: "Password reset"
+    mail to: user.email, subject: "Password reset"
   end
 end
